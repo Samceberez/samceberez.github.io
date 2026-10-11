@@ -127,7 +127,7 @@ h2{font-size:clamp(42px,11vw,72px);line-height:1.02;letter-spacing:-.055em}
 
 
 /* Services: seven photo tiles, mixed sizes. Copy sits on a scrim, never on raw photo. */
-.services{position:relative;background:var(--surface);border-radius:28px 28px 0 0}
+.services{position:relative;background:var(--surface);border-radius:28px}
 .services-head{margin-bottom:40px}
 .svc-text{margin-top:10px;font-size:16px;line-height:1.55;color:var(--overlay-text);max-width:44ch;transition:opacity .25s var(--ease),transform .25s var(--ease)}.svc-text.is-swapping{opacity:0;transform:translateY(6px)}
 .svc-switch{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
@@ -199,13 +199,6 @@ h2{font-size:clamp(42px,11vw,72px);line-height:1.02;letter-spacing:-.055em}
   .story h3{font-size:clamp(40px,3.4vw,54px)}
   .story .svc-text{font-size:17px;margin-top:14px}
 }
-
-/* Atelier: manifesto beside a real studio reflection. */
-.atelier{position:relative;overflow:clip;padding-block:var(--section-space);background:var(--surface)}
-.atelier-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:40px;align-items:center}
-.atelier h2{font-size:clamp(42px,11vw,72px);line-height:1.06;letter-spacing:-.055em}.atelier h2>span{display:block}
-.atelier-text{margin-top:20px;font-size:17px;line-height:1.65;color:var(--muted);max-width:42ch}
-.atelier-photo{position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:var(--radius-card);border:1px solid var(--line)}.atelier-photo img{object-position:center 40%;scale:1.12}
 
 /* Finished cars: one studio, the cars change places. The next car is dragged in behind a vertical line of light;
    the room is identical in every frame, so only the car appears to change. */
@@ -450,7 +443,6 @@ details p{font-size:16px;color:var(--muted);line-height:1.7;padding:0 48px 26px 
   @media(prefers-reduced-motion:no-preference){
     .hero{view-timeline-name:--hero;view-timeline-axis:block}.hero-scene{animation:hero-drift linear both;animation-timeline:--hero;animation-range:exit 0% exit 100%}.hero-content{animation:hero-type-exit linear both;animation-timeline:--hero;animation-range:exit 0% exit 90%}
         @media(max-width:1023px){.hero h1{animation:hero-type-exit linear both;animation-timeline:--hero;animation-range:exit 0% exit 80%}}
-    .atelier-photo img{animation:photo-drift linear both;animation-timeline:view();animation-range:cover 0% cover 100%}
   }
 }
 @keyframes hero-drift{to{transform:translateY(16%) scale(1.18);opacity:.2}}@keyframes hero-type-exit{to{transform:translateY(-60px);opacity:0}}@keyframes photo-drift{from{translate:0 -5%}to{translate:0 5%}}
@@ -462,20 +454,16 @@ details p{font-size:16px;color:var(--muted);line-height:1.7;padding:0 48px 26px 
   .menu-toggle,#mobile-menu{display:none}
   .hero{--car-w:min(90vw,1000px);--word:min(calc(var(--car-w)*.28),236px);padding:120px 0 48px}.hero-location{font-size:12px}.hero h1{margin-top:18px}.hero-tagline{font-size:26px}
   .hero-footer{display:flex;flex-direction:column;align-items:center;margin-top:26px}.hero-action{display:flex;flex-direction:column;align-items:center;gap:22px}.hero-action>p{display:block}.hero-action .button{width:auto;min-width:300px}.hero-secondary{margin-top:10px}
-  h2{font-size:clamp(64px,7.2vw,108px)}.lead{font-size:19px;margin-top:24px}.atelier-text,.booking-copy>p{margin-top:24px}
+  h2{font-size:clamp(64px,7.2vw,108px)}.lead{font-size:19px;margin-top:24px}.booking-copy>p{margin-top:24px}
   .works-head{margin-bottom:64px}
-  .services{border-radius:48px 48px 0 0}.services-head{margin-bottom:64px}
-  .atelier h2{font-size:clamp(64px,7.2vw,108px)}.atelier-text{font-size:19px}
+  .services{border-radius:48px}.services-head{margin-bottom:64px}
   .essentials h2{margin-bottom:64px}summary{font-size:21px;min-height:88px}details p{font-size:17px}
   .booking{border-radius:48px 48px 0 0}.booking-card{padding:36px 34px 30px}
   .footer{padding-block:64px 40px}.footer-bottom{font-size:14px}}
 @media(min-width:900px){
   .works-tabs{display:none!important}.works.is-tabbed .work:not(.is-active){display:block}
   .works-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}.work:nth-child(2){margin-top:72px}.work:nth-child(3){margin-top:24px}
-  .atelier-grid{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:72px}
   .booking-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:72px}
-}
-@media(min-width:1024px){
 }
 @media(min-width:1200px){
   :root{--gutter:64px}.header{left:max(36px,calc((100% - 1400px)/2));right:max(36px,calc((100% - 1400px)/2))}.desktop-nav{gap:40px}.works-grid{gap:32px}
