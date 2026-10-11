@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /work/
+Disallow: /tools/
+
+Sitemap: https://samceberez.github.io/sitemap.xml
